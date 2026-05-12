@@ -264,6 +264,7 @@ data/manual_scoring_sheet.csv
 
 ```text
 email_action_plan_assistant/
+├── assets
 ├── app.py
 ├── requirements.txt
 ├── README.md
