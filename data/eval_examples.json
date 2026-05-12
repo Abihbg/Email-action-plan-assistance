@@ -1,0 +1,58 @@
+[
+  {
+    "id": "E01",
+    "case_type": "Clear task assignment",
+    "user_request": "extract action items",
+    "email": "Subject: Client kickoff follow-up\n\nHi team,\n\nThanks for joining today. Alex, please prepare the first draft of the client onboarding slides by Friday at 3 PM. Priya, please review the budget assumptions and send any concerns by Wednesday morning. I will send the final agenda before next Monday's status meeting.\n\nBest,\nMorgan",
+    "expected_good_output": "Should identify three confirmed tasks, owners Alex/Priya/Morgan, and deadlines Friday 3 PM, Wednesday morning, and before next Monday's status meeting."
+  },
+  {
+    "id": "E02",
+    "case_type": "Tasks without deadlines",
+    "user_request": "summarize this into a plan",
+    "email": "Subject: Marketing launch next steps\n\nHi Jamie,\n\nCould you update the launch checklist, ask finance whether the promo budget has been approved, and collect final creative assets from the design team? We should also think about whether the homepage banner needs a stronger call to action.\n\nThanks,\nSam",
+    "expected_good_output": "Should capture three likely tasks for Jamie with deadline Not specified, and mark the homepage banner comment as suggested or ambiguous rather than confirmed."
+  },
+  {
+    "id": "E03",
+    "case_type": "Long mixed email",
+    "user_request": "extract action items and missing information",
+    "email": "Subject: Notes from vendor meeting\n\nTeam,\n\nThe vendor gave a long update on implementation history, prior clients, and their support model. Most of the call was background. The important part is that they need our security questionnaire completed before they can open the sandbox. Lina, please own the questionnaire and send it by Thursday. Omar, please confirm whether legal has already reviewed the standard data-processing addendum. The vendor also mentioned that training could happen sometime next month, but no date was agreed.\n\nRegards,\nNina",
+    "expected_good_output": "Should ignore background details, identify Lina and Omar tasks, include Thursday for Lina, Not specified for Omar, and flag training date as missing/ambiguous."
+  },
+  {
+    "id": "E04",
+    "case_type": "Filtered output request",
+    "user_request": "show deadlines only",
+    "email": "Subject: Finance report schedule\n\nHi all,\n\nThe revenue variance file is due this Thursday. Please send department comments by Friday noon. The final report will be reviewed in Monday's leadership meeting. Carlos will update the spreadsheet and Mei will check the footnotes.\n\nThanks,\nDana",
+    "expected_good_output": "Should focus on Thursday, Friday noon, and Monday's leadership meeting, while still noting if any task deadlines are unclear."
+  },
+  {
+    "id": "E05",
+    "case_type": "Vague ownership",
+    "user_request": "who owns each task?",
+    "email": "Subject: Client data access\n\nHi team,\n\nSomeone should follow up with the client about the missing data access form. We also need the project timeline cleaned up before the steering committee meeting. I think Ben can probably handle the timeline, but please confirm.\n\nBest,\nRiley",
+    "expected_good_output": "Should mark data access owner as Not specified and timeline owner as Ambiguous or suggested Ben, not confirmed."
+  },
+  {
+    "id": "E06",
+    "case_type": "Indirect deadline",
+    "user_request": "extract action items",
+    "email": "Subject: Before the workshop\n\nHi Chris,\n\nBefore the workshop, please send participants the pre-read and make sure the Zoom link is correct. The workshop is currently planned for May 18, but the room booking is still pending.\n\nThanks,\nTaylor",
+    "expected_good_output": "Should identify two tasks for Chris, deadline before the workshop / May 18 if interpreted carefully, and flag room booking as pending."
+  },
+  {
+    "id": "E07",
+    "case_type": "No real action item",
+    "user_request": "extract action items",
+    "email": "Subject: FYI: article on AI governance\n\nHi everyone,\n\nSharing this article because it may be useful for our future discussion on AI governance. No action needed for now; just keep it in mind if we revisit the policy memo later.\n\nBest,\nJordan",
+    "expected_good_output": "Should not invent tasks. It should say no confirmed action items and mention that this is FYI only."
+  },
+  {
+    "id": "E08",
+    "case_type": "Multiple owners and ambiguity",
+    "user_request": "create an action plan",
+    "email": "Subject: Board packet preparation\n\nHi Maria and Ethan,\n\nMaria, please update the customer retention slide by Tuesday end of day. Ethan, please add the Q2 cost forecast to the appendix. The CEO may want a one-page risk summary, but that has not been confirmed yet. Let's have the packet ready before the board prep call.\n\nRegards,\nAngela",
+    "expected_good_output": "Should identify Maria and Ethan tasks, Tuesday EOD for Maria, Not specified for Ethan except packet timing, and mark risk summary as suggested/unconfirmed."
+  }
+]

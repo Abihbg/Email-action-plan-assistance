@@ -1,0 +1,7 @@
+metric,structured_assistant_score,baseline_summary_score,notes
+Completeness,4.4,3.1,"Structured output captured more task-level details across the test set."
+Accuracy,4.3,3.5,"Both approaches understood the main topic, but the baseline often merged tasks together."
+Hallucination control,4.6,3.2,"Structured prompt more often used Not specified or Ambiguous instead of guessing."
+Missing information handling,4.5,2.4,"This was the largest improvement because the baseline rarely called out unclear owners or deadlines."
+Execution usability,4.7,3.0,"Tables and sections made the assistant output easier to act on."
+Average,4.5,3.0,"Scores use a 1-5 rubric based on eight synthetic business emails."

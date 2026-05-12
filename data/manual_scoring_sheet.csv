@@ -1,0 +1,9 @@
+id,case_type,user_request,expected_good_output,structured_completeness_1_5,structured_accuracy_1_5,structured_hallucination_control_1_5,structured_missing_info_handling_1_5,structured_usability_1_5,baseline_completeness_1_5,baseline_accuracy_1_5,baseline_hallucination_control_1_5,baseline_missing_info_handling_1_5,baseline_usability_1_5,notes
+E01,Clear task assignment,extract action items,"Should identify three confirmed tasks, owners Alex/Priya/Morgan, and deadlines Friday 3 PM, Wednesday morning, and before next Monday's status meeting.",,,,,,,,,,,
+E02,Tasks without deadlines,summarize this into a plan,"Should capture three likely tasks for Jamie with deadline Not specified, and mark the homepage banner comment as suggested or ambiguous rather than confirmed.",,,,,,,,,,,
+E03,Long mixed email,extract action items and missing information,"Should ignore background details, identify Lina and Omar tasks, include Thursday for Lina, Not specified for Omar, and flag training date as missing/ambiguous.",,,,,,,,,,,
+E04,Filtered output request,show deadlines only,"Should focus on Thursday, Friday noon, and Monday's leadership meeting, while still noting if any task deadlines are unclear.",,,,,,,,,,,
+E05,Vague ownership,who owns each task?,"Should mark data access owner as Not specified and timeline owner as Ambiguous or suggested Ben, not confirmed.",,,,,,,,,,,
+E06,Indirect deadline,extract action items,"Should identify two tasks for Chris, deadline before the workshop / May 18 if interpreted carefully, and flag room booking as pending.",,,,,,,,,,,
+E07,No real action item,extract action items,Should not invent tasks. It should say no confirmed action items and mention that this is FYI only.,,,,,,,,,,,
+E08,Multiple owners and ambiguity,create an action plan,"Should identify Maria and Ethan tasks, Tuesday EOD for Maria, Not specified for Ethan except packet timing, and mark risk summary as suggested/unconfirmed.",,,,,,,,,,,
