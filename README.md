@@ -161,80 +161,7 @@ Example output structure:
 ...
 ```
 
-## 6. Setup Instructions
-
-### Step 1: Clone the repository
-
-```bash
-git clone <your-repo-link>
-cd email_action_plan_assistant
-```
-
-### Step 2: Create and activate a virtual environment
-
-Windows PowerShell:
-
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-```
-
-Mac/Linux:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-### Step 3: Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Step 4: Add API key
-
-Copy `.env.example` to `.env`:
-
-```bash
-copy .env.example .env
-```
-
-On Mac/Linux:
-
-```bash
-cp .env.example .env
-```
-
-Then add your API key inside `.env`.
-
-Gemini option:
-
-```text
-LLM_PROVIDER=gemini
-GEMINI_API_KEY=your_key_here
-MODEL_NAME=gemini-2.5-flash
-```
-
-OpenAI option:
-
-```text
-LLM_PROVIDER=openai
-OPENAI_API_KEY=your_key_here
-OPENAI_MODEL=gpt-4o-mini
-```
-
-Do **not** commit `.env` to GitHub.
-
-### Step 5: Run the app
-
-```bash
-streamlit run app.py
-```
-
-The app will open in a browser. Paste an email and click **Generate structured action plan**.
-
-## 7. Running the Evaluation Materials
+## 6. Running the Evaluation Materials
 
 The test emails are in:
 
@@ -248,19 +175,15 @@ The summary evaluation results are in:
 data/evaluation_results.csv
 ```
 
-To create a blank manual scoring sheet, run:
+A blank manual scoring sheet is already included at:
 
-```bash
-python scripts/evaluate.py
-```
-
-This creates:
-
-```text
 data/manual_scoring_sheet.csv
-```
 
-## 8. Repository Contents
+If you want to regenerate it from the evaluation examples, run:
+
+python scripts/evaluate.py
+
+## 7. Repository Contents
 
 ```text
 email_action_plan_assistant/
@@ -268,7 +191,6 @@ email_action_plan_assistant/
 ├── requirements.txt
 ├── README.md
 ├── evaluation.md
-├── presentation_script.md
 ├── .env.example
 ├── .gitignore
 ├── data/
@@ -281,8 +203,9 @@ email_action_plan_assistant/
     └── evaluate.py
 ```
 
-## 9. Privacy and Governance
+## 8. Privacy and Governance
 
 This project uses synthetic emails only. Do not commit private emails, API keys, confidential business data, or personally identifiable information to the repository. If the app is used in a real organization, the organization should review the LLM provider's data policies before employees paste sensitive emails into the tool.
 
+## 9. Preview
 ![App screenshot](assets/app_screenshot.png)
